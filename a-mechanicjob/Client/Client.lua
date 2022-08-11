@@ -41,28 +41,28 @@ CreateThread(function()
                 if ESX.PlayerData.job and ESX.PlayerData.job.name == "mechanic" then  
                 
                     local _coords = GetEntityCoords(PlayerPedId())
-                    local _dist = #(_coords - v.Armario) < 1
+                    local _dist = #(_coords - v.Wardrobe) < 1
                     local _pid = PlayerPedId()
 
                     if _dist then
                         _sleep = false
-                        ESX.ShowFloatingHelpNotification('Press ~r~E~w~ to open the Wardrobe', v.Armario)
+                        ESX.ShowFloatingHelpNotification('Press ~r~E~w~ to open the Wardrobe', v.Wardrobe)
                         if IsControlJustPressed(0, 38) then
                             ArmarioMenu()
                         end
                     end
-                    local _marker = #(_coords - v.Armario) < 10
+                    local _marker = #(_coords - v.Wardrobe) < 10
                     if _marker then
                         _sleep = false
                         local pedCoords = GetEntityCoords(PlayerPedId())
-                        DrawMarker(20, v.Armario, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.3, 0.3, 1, 1, 1, 250, false, true, 2, nil, nil, false)
+                        DrawMarker(20, v.Wardrobe, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.3, 0.3, 1, 1, 1, 250, false, true, 2, nil, nil, false)
                     end
 
                     local _dist = #(_coords - v.SpawnCars) < 3
                     if _dist then
                         _sleep = false
 
-                        ESX.ShowFloatingHelpNotification('Press ~r~E~w~ to open the Garage', v.Armario)
+                        ESX.ShowFloatingHelpNotification('Press ~r~E~w~ to open the Garage', v.SpawnCars)
 
                         if IsControlJustPressed(0, 38) then
                             OpenGarajeMenu()
@@ -82,7 +82,7 @@ CreateThread(function()
                         _sleep = false
                         if IsPedInAnyVehicle(PlayerPedId()) then
 
-                        ESX.ShowFloatingHelpNotification('Press ~r~E~w~ to delete the vehicle', v.Armario)
+                        ESX.ShowFloatingHelpNotification('Press ~r~E~w~ to delete the vehicle', v.DeleteCars)
 
                             if IsControlJustPressed(0, 38) then
                                 local veh = ESX.Game.GetClosestVehicle(GetEntityCoords(PlayerPedId()))
@@ -108,7 +108,7 @@ CreateThread(function()
                     if ESX.PlayerData.job.grade_name == 'boss' then
                         if _dist then
                             _sleep = false
-                        ESX.ShowFloatingHelpNotification('Press ~r~E~w~ to open the boss menu', v.Armario)
+                        ESX.ShowFloatingHelpNotification('Press ~r~E~w~ to open the boss menu', v.Boss)
                             if IsControlJustPressed(0, 38) then
                                 TriggerEvent('esx_society:openBossMenu', 'mechanic', function(data, menu)
                                     menu.close()
@@ -127,7 +127,7 @@ CreateThread(function()
                     local _dist = #(_coords - v.Cloakrooms) < 1
                     if _dist then
                             _sleep = false
-                        ESX.ShowFloatingHelpNotification('Press ~r~E~w~ to open the Locker', v.Armario)
+                        ESX.ShowFloatingHelpNotification('Press ~r~E~w~ to open the Locker', v.Cloakrooms)
                             if IsControlJustPressed(0, 38) then
                                 IndocumentarioMenu()
                             end
@@ -144,7 +144,7 @@ CreateThread(function()
                     if _dist then
                         if Config.HabilitarProps then
                             _sleep = false
-                        ESX.ShowFloatingHelpNotification('Press ~r~E~w~ to open the props menu', v.Armario)
+                        ESX.ShowFloatingHelpNotification('Press ~r~E~w~ to open the props menu', v.Props)
                             if IsControlJustPressed(0, 38) then
                                 OpenProps()
                             end
@@ -159,7 +159,6 @@ CreateThread(function()
                     end
 
 
-                -- Termina codigo
                 end
         end
         if _sleep then Wait(1000) end
@@ -186,7 +185,7 @@ end)
 RegisterKeyMapping('z12c12xMechanicActions', 'Actions Menu (Mechanic).', 'keyboard', 'F6')
 RegisterCommand('z12c12xMechanicActions', function()
     if ESX.PlayerData.job and ESX.PlayerData.job.name == 'mechanic' and not isDead then
-    AccionesMecanicos()
+    MechanicActions()
     else
         Wait(500)
     end

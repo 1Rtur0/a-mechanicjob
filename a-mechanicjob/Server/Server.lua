@@ -2,11 +2,11 @@ ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 print('^0[^4ARtuRO Mecanico^0] ^2Starteado^0')
-TriggerEvent('esx_society:registerSociety', 'mechanic', 'Mecanico', 'society_mechanic', 'society_mechanic', 'society_mechanic', {type = 'public'})
+TriggerEvent('esx_society:registerSociety', 'mechanic', 'Mechanic', 'society_mechanic', 'society_mechanic', 'society_mechanic', {type = 'public'})
 
 
-RegisterNetEvent('letag-mechanicjob:getStockItem')
-AddEventHandler('letag-mechanicjob:getStockItem', function(itemName, count)
+RegisterNetEvent('a-mechanicjob:getStockItem')
+AddEventHandler('a-mechanicjob:getStockItem', function(itemName, count)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
 
@@ -20,18 +20,18 @@ AddEventHandler('letag-mechanicjob:getStockItem', function(itemName, count)
 			if xPlayer.canCarryItem(itemName, count) then
 				inventory.removeItem(itemName, count)
 				xPlayer.addInventoryItem(itemName, count)
-				xPlayer.showNotification("Has sacado ", count, inventoryItem.label)
+				xPlayer.showNotification("You taken out ", count, inventoryItem.label)
 			else
-				xPlayer.showNotification("Cantidad invalida")
+				xPlayer.showNotification("Invalid quantity")
 			end
 		else
-			xPlayer.showNotification("Cantidad invalida")
+			xPlayer.showNotification("Invalid quantity")
 		end
 	end)
 end)
 
-RegisterNetEvent('letag-mechanicjob:putStockItems')
-AddEventHandler('letag-mechanicjob:putStockItems', function(itemName, count)
+RegisterNetEvent('a-mechanicjob:putStockItems')
+AddEventHandler('a-mechanicjob:putStockItems', function(itemName, count)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local sourceItem = xPlayer.getInventoryItem(itemName)
 
@@ -42,20 +42,20 @@ AddEventHandler('letag-mechanicjob:putStockItems', function(itemName, count)
 		if sourceItem.count >= count and count > 0 then
 			xPlayer.removeInventoryItem(itemName, count)
 			inventory.addItem(itemName, count)
-			xPlayer.showNotification("Has depositado ", count, inventoryItem.label)
+			xPlayer.showNotification("You taken out ", count, inventoryItem.label)
 		else
-			xPlayer.showNotification("Cantidad invalida")
+			xPlayer.showNotification("Invalid quantity")
 		end
 	end)
 end)
 
-ESX.RegisterServerCallback('letag-mechanicjob:getStockItems', function(source, cb)
+ESX.RegisterServerCallback('a-mechanicjob:getStockItems', function(source, cb)
 	TriggerEvent('esx_addoninventory:getSharedInventory', 'society_mechanic', function(inventory)
 		cb(inventory.items)
 	end)
 end)
 
-ESX.RegisterServerCallback('letag-mechanicjob:getPlayerInventory', function(source, cb)
+ESX.RegisterServerCallback('a-mechanicjob:getPlayerInventory', function(source, cb)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local items   = xPlayer.inventory
 

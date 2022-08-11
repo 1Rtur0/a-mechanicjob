@@ -1,17 +1,17 @@
 # Mechanic Job
 
-- 0.0 - 0.1 ms cuando no esta en uso 
-- Sistema de Props con animaciones
-- Menú F6
-- Configurable desde el Config.lua
-- Sistema de EUP (Tocad si sabeis lo que estais haciendo)
+- 0.0 - 0.1 ms when not in use
+- Prop system with animations
+- F6 Menu
+- Configurable from Config.lua
+- EUP system (Touch if you know what you are doing)
 
 Preview: https://i.imgur.com/EXdlhlJ.png
 Discord:  https://discord.gg/Vh2Pjan9rf
 
-# Requerimientos
+# Requirements
 
-Deben de poner lo siguiente en su es_extended para que funcione
+You must put the following in your es_extended for it to work
 
 ```
 

@@ -36,7 +36,7 @@ CreateThread(function()
 
         local _sleep = true
 
-            for k,v in pairs(Config.Mecanicos) do
+            for k,v in pairs(Config.Mechanic) do
 
                 if ESX.PlayerData.job and ESX.PlayerData.job.name == "mechanic" then  
                 
@@ -46,7 +46,7 @@ CreateThread(function()
 
                     if _dist then
                         _sleep = false
-                        ESX.ShowFloatingHelpNotification('~r~E~w~ Armario', v.Armario)
+                        ESX.ShowFloatingHelpNotification('Press ~r~E~w~ to open the Wardrobe', v.Armario)
                         if IsControlJustPressed(0, 38) then
                             ArmarioMenu()
                         end
@@ -62,7 +62,7 @@ CreateThread(function()
                     if _dist then
                         _sleep = false
 
-                        ESX.ShowFloatingHelpNotification('~g~E~w~ Garaje', v.SpawnCars)
+                        ESX.ShowFloatingHelpNotification('Press ~r~E~w~ to open the Garage', v.Armario)
 
                         if IsControlJustPressed(0, 38) then
                             OpenGarajeMenu()
@@ -82,7 +82,7 @@ CreateThread(function()
                         _sleep = false
                         if IsPedInAnyVehicle(PlayerPedId()) then
 
-                            ESX.ShowFloatingHelpNotification('~g~E~w~ Borrar', v.DeleteCars+0.50)
+                        ESX.ShowFloatingHelpNotification('Press ~r~E~w~ to delete the vehicle', v.Armario)
 
                             if IsControlJustPressed(0, 38) then
                                 local veh = ESX.Game.GetClosestVehicle(GetEntityCoords(PlayerPedId()))
@@ -108,7 +108,7 @@ CreateThread(function()
                     if ESX.PlayerData.job.grade_name == 'boss' then
                         if _dist then
                             _sleep = false
-                            ESX.ShowFloatingHelpNotification('~g~E~w~ Jefe', v.Boss)
+                        ESX.ShowFloatingHelpNotification('Press ~r~E~w~ to open the boss menu', v.Armario)
                             if IsControlJustPressed(0, 38) then
                                 TriggerEvent('esx_society:openBossMenu', 'mechanic', function(data, menu)
                                     menu.close()
@@ -127,7 +127,7 @@ CreateThread(function()
                     local _dist = #(_coords - v.Cloakrooms) < 1
                     if _dist then
                             _sleep = false
-                            ESX.ShowFloatingHelpNotification('~r~E~w~ Vestuario', v.Cloakrooms)
+                        ESX.ShowFloatingHelpNotification('Press ~r~E~w~ to open the Locker', v.Armario)
                             if IsControlJustPressed(0, 38) then
                                 IndocumentarioMenu()
                             end
@@ -144,7 +144,7 @@ CreateThread(function()
                     if _dist then
                         if Config.HabilitarProps then
                             _sleep = false
-                            ESX.ShowFloatingHelpNotification('~r~E~w~ Props', v.Props)
+                        ESX.ShowFloatingHelpNotification('Press ~r~E~w~ to open the props menu', v.Armario)
                             if IsControlJustPressed(0, 38) then
                                 OpenProps()
                             end
@@ -167,9 +167,8 @@ CreateThread(function()
 end)
 
 
--- Acciones por controles
+-- Blips
 CreateThread(function()
-
     local blip = AddBlipForCoord(1148.22, -785.79, 57.6)
 
 	SetBlipSprite (blip, 446)
@@ -181,12 +180,11 @@ CreateThread(function()
 	BeginTextCommandSetBlipName('STRING')
 	AddTextComponentSubstringPlayerName("Mirror Park Mechanic")
 	EndTextCommandSetBlipName(blip)
-
-
 end)
 
-RegisterKeyMapping('z12c12xAccionesMecanico', 'Menú de Acciones (Mecanico).', 'keyboard', 'F6')
-RegisterCommand('z12c12xAccionesMecanico', function()
+-- Action Menu
+RegisterKeyMapping('z12c12xMechanicActions', 'Actions Menu (Mechanic).', 'keyboard', 'F6')
+RegisterCommand('z12c12xMechanicActions', function()
     if ESX.PlayerData.job and ESX.PlayerData.job.name == 'mechanic' and not isDead then
     AccionesMecanicos()
     else

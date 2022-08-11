@@ -70,7 +70,7 @@ AddEventHandler('mecanico:prop', function(data)
         if not DoesEntityExist(CargarObjeto) then
             ESX.Game.SpawnObject("prop_car_door_01", {x = coords.x, y = coords.y, z = coords.z}, function(spawnObj)
                 CargarObjeto = spawnObj
-                ESX.ShowNotification('Para soltar el objeto presiona X')
+                ESX.ShowNotification('To release the object press X')
                 AttachEntityToEntity(CargarObjeto, player, GetPedBoneIndex(player, 57005), 0.4, 0, 0, 0, 270.0, 60.0, true, true, false, true, 1, true)
             end)
         end
@@ -105,7 +105,7 @@ AddEventHandler('mecanico:prop', function(data)
         if not DoesEntityExist(CargarObjeto) then 
             ESX.Game.SpawnObject("prop_wheel_rim_04", {x = coords.x, y = coords.y, z = coords.z}, function(spawnObj)
                 CargarObjeto = spawnObj
-                ESX.ShowNotification('Para soltar el objeto presiona X')
+                ESX.ShowNotification('To release the object press X')
         --		local boneIndex = GetPedBoneIndex(player, 28422)
                 AttachEntityToEntity(CargarObjeto, PlayerPedId(), GetPedBoneIndex(PlayerPedId(), 18905), 0.15, 0.0, 0.23, 60.0, 100.0, 10.0, true, true, false, true, 1, true)
                 TaskPlayAnim(PlayerPedId(), 'anim@heists@box_carry@', "walk", 8.0, -8, -1, 49, 0, 0, 0, 0)
@@ -132,7 +132,7 @@ elseif prop == "asiento" then
 	if not DoesEntityExist(CargarObjeto) then 
 		ESX.Game.SpawnObject("prop_car_seat", {x = coords.x, y = coords.y, z = coords.z}, function(spawnObj)
 			CargarObjeto = spawnObj
-                ESX.ShowNotification('Para soltar el objeto presiona X')
+                ESX.ShowNotification('To release the object press X')
 
 				AttachEntityToEntity(CargarObjeto, PlayerPedId(), GetPedBoneIndex(PlayerPedId(), 18905), 0.15, 0.0, 0.23, 60.0, 100.0, 10.0, true, true, false, true, 1, true)
                 TaskPlayAnim(PlayerPedId(), 'anim@heists@box_carry@', "walk", 8.0, -8, -1, 49, 0, 0, 0, 0)
@@ -168,7 +168,7 @@ elseif prop == "capot" then
 	if not DoesEntityExist(CargarObjeto) then 
 		ESX.Game.SpawnObject("imp_prop_impexp_bonnet_01a", {x = coords.x, y = coords.y, z = coords.z}, function(spawnObj)
 			CargarObjeto = spawnObj
-			ESX.ShowNotification('Para soltar el objeto presiona X')
+                ESX.ShowNotification('To release the object press X')
 	--		local boneIndex = GetPedBoneIndex(player, 28422)
 			AttachEntityToEntity(CargarObjeto, PlayerPedId(), GetPedBoneIndex(PlayerPedId(), 18905), 0.15, 0.0, 0.23, 60.0, 100.0, 10.0, true, true, false, true, 1, true)
 			TaskPlayAnim(PlayerPedId(), 'anim@heists@box_carry@', "walk", 8.0, -8, -1, 49, 0, 0, 0, 0)
@@ -195,7 +195,7 @@ elseif prop == "paragolpe" then
 	if not DoesEntityExist(CargarObjeto) then 
 		ESX.Game.SpawnObject("imp_prop_impexp_rear_bumper_03a", {x = coords.x, y = coords.y, z = coords.z}, function(spawnObj)
 			CargarObjeto = spawnObj
-			ESX.ShowNotification('Para soltar el objeto presiona X')
+                ESX.ShowNotification('To release the object press X')
 	--		local boneIndex = GetPedBoneIndex(player, 28422)
 			AttachEntityToEntity(CargarObjeto, PlayerPedId(), GetPedBoneIndex(PlayerPedId(), 18905), 0.15, 0.0, 0.23, 120.0, 100.0, 10.0, true, true, false, true, 1, true)
 			TaskPlayAnim(PlayerPedId(), 'anim@heists@box_carry@', "walk", 8.0, -8, -1, 49, 0, 0, 0, 0)
@@ -222,7 +222,7 @@ elseif prop == "escape" then
 	if not DoesEntityExist(CargarObjeto) then 
 		ESX.Game.SpawnObject("imp_prop_impexp_exhaust_01", {x = coords.x, y = coords.y, z = coords.z}, function(spawnObj)
 			CargarObjeto = spawnObj
-			ESX.ShowNotification('Para soltar el objeto presiona X')
+                ESX.ShowNotification('To release the object press X')
 	--		local boneIndex = GetPedBoneIndex(player, 28422)
 			AttachEntityToEntity(CargarObjeto, PlayerPedId(), GetPedBoneIndex(PlayerPedId(), 18905), 0.15, 0.0, 0.23, 120.0, 100.0, 10.0, true, true, false, true, 1, true)
 			TaskPlayAnim(PlayerPedId(), 'anim@heists@box_carry@', "walk", 8.0, -8, -1, 49, 0, 0, 0, 0)
@@ -250,7 +250,7 @@ elseif prop == "motorc" then
 	if not DoesEntityExist(CargarObjeto) then 
 		ESX.Game.SpawnObject("imp_prop_impexp_engine_part_01a", {x = coords.x, y = coords.y, z = coords.z}, function(spawnObj)
 			CargarObjeto = spawnObj
-			ESX.ShowNotification('Para soltar el objeto presiona X')
+                ESX.ShowNotification('To release the object press X')
 	--		local boneIndex = GetPedBoneIndex(player, 28422)
 			AttachEntityToEntity(CargarObjeto, PlayerPedId(), GetPedBoneIndex(PlayerPedId(), 18905), 0.15, 0.0, 0.23, 0.0, 100.0, 120.0, true, true, false, true, 1, true)
 			TaskPlayAnim(PlayerPedId(), 'anim@heists@box_carry@', "walk", 8.0, -8, -1, 49, 0, 0, 0, 0)
@@ -277,7 +277,7 @@ elseif prop == "motorg" then
 	if not DoesEntityExist(CargarObjeto) then 
 		ESX.Game.SpawnObject("prop_car_engine_01", {x = coords.x, y = coords.y, z = coords.z}, function(spawnObj)
 			CargarObjeto = spawnObj
-			ESX.ShowNotification('Para soltar el objeto presiona X')
+                ESX.ShowNotification('To release the object press X')
 	--		local boneIndex = GetPedBoneIndex(player, 28422)
 			AttachEntityToEntity(CargarObjeto, PlayerPedId(), GetPedBoneIndex(PlayerPedId(), 18905), 0.15, 0.0, 0.23, 0.0, 100.0, 120.0, true, true, false, true, 1, true)
 			TaskPlayAnim(PlayerPedId(), 'anim@heists@box_carry@', "walk", 8.0, -8, -1, 49, 0, 0, 0, 0)
@@ -304,7 +304,7 @@ elseif prop == "caliper" then
 	if not DoesEntityExist(CargarObjeto) then 
 		ESX.Game.SpawnObject("imp_prop_impexp_brake_caliper_01a", {x = coords.x, y = coords.y, z = coords.z}, function(spawnObj)
 			CargarObjeto = spawnObj
-			ESX.ShowNotification('Para soltar el objeto presiona X')
+                ESX.ShowNotification('To release the object press X')
 	--		local boneIndex = GetPedBoneIndex(player, 28422)
 			AttachEntityToEntity(CargarObjeto, PlayerPedId(), GetPedBoneIndex(PlayerPedId(), 18905), 0.15, 0.0, 0.23, 0.0, 100.0, 120.0, true, true, false, true, 1, true)
 			TaskPlayAnim(PlayerPedId(), 'anim@heists@box_carry@', "walk", 8.0, -8, -1, 49, 0, 0, 0, 0)
@@ -332,7 +332,7 @@ elseif prop == "transmision" then
 	if not DoesEntityExist(CargarObjeto) then 
 		ESX.Game.SpawnObject("imp_prop_impexp_gearbox_01", {x = coords.x, y = coords.y, z = coords.z}, function(spawnObj)
 			CargarObjeto = spawnObj
-			ESX.ShowNotification('Para soltar el objeto presiona X')
+                ESX.ShowNotification('To release the object press X')
 	--		local boneIndex = GetPedBoneIndex(player, 28422)
 			AttachEntityToEntity(CargarObjeto, PlayerPedId(), GetPedBoneIndex(PlayerPedId(), 18905), 0.15, 0.0, 0.23, 0.0, 100.0, 120.0, true, true, false, true, 1, true)
 			TaskPlayAnim(PlayerPedId(), 'anim@heists@box_carry@', "walk", 8.0, -8, -1, 49, 0, 0, 0, 0)
@@ -359,7 +359,7 @@ elseif prop == "carburador" then
 	if not DoesEntityExist(CargarObjeto) then 
 		ESX.Game.SpawnObject("lr_prop_carburettor_01", {x = coords.x, y = coords.y, z = coords.z}, function(spawnObj)
 			CargarObjeto = spawnObj
-			ESX.ShowNotification('Para soltar el objeto presiona X')
+                ESX.ShowNotification('To release the object press X')
 	--		local boneIndex = GetPedBoneIndex(player, 28422)
 			AttachEntityToEntity(CargarObjeto, PlayerPedId(), GetPedBoneIndex(PlayerPedId(), 18905), 0.15, 0.0, 0.23, 0.0, 100.0, 120.0, true, true, false, true, 1, true)
 			TaskPlayAnim(PlayerPedId(), 'anim@heists@box_carry@', "walk", 8.0, -8, -1, 49, 0, 0, 0, 0)
@@ -386,7 +386,7 @@ elseif prop == "cubrerueda" then
 	if not DoesEntityExist(CargarObjeto) then 
 		ESX.Game.SpawnObject("imp_prop_impexp_car_panel_01a", {x = coords.x, y = coords.y, z = coords.z}, function(spawnObj)
 			CargarObjeto = spawnObj
-			ESX.ShowNotification('Para soltar el objeto presiona X')
+                ESX.ShowNotification('To release the object press X')
 	--		local boneIndex = GetPedBoneIndex(player, 28422)
 			AttachEntityToEntity(CargarObjeto, PlayerPedId(), GetPedBoneIndex(PlayerPedId(), 18905), 0.15, 0.0, 0.23, 0.0, 100.0, 120.0, true, true, false, true, 1, true)
 			TaskPlayAnim(PlayerPedId(), 'anim@heists@box_carry@', "walk", 8.0, -8, -1, 49, 0, 0, 0, 0)
@@ -414,7 +414,7 @@ elseif prop == "bateria" then
 	if not DoesEntityExist(CargarObjeto) then 
 		ESX.Game.SpawnObject("prop_car_battery_01", {x = coords.x, y = coords.y, z = coords.z}, function(spawnObj)
 			CargarObjeto = spawnObj
-			ESX.ShowNotification('Para soltar el objeto presiona X')
+                ESX.ShowNotification('To release the object press X')
 	--		local boneIndex = GetPedBoneIndex(player, 28422)
 			AttachEntityToEntity(CargarObjeto, PlayerPedId(), GetPedBoneIndex(PlayerPedId(), 18905), 0.15, 0.0, 0.23, 0.0, 100.0, 120.0, true, true, false, true, 1, true)
 			TaskPlayAnim(PlayerPedId(), 'anim@heists@box_carry@', "walk", 8.0, -8, -1, 49, 0, 0, 0, 0)
@@ -442,7 +442,7 @@ elseif prop == "Cubierta" then
 	if not DoesEntityExist(CargarObjeto) then 
 		ESX.Game.SpawnObject("prop_wheel_tyre", {x = coords.x, y = coords.y, z = coords.z}, function(spawnObj)
 			CargarObjeto = spawnObj
-			ESX.ShowNotification('Para soltar el objeto presiona X')
+                ESX.ShowNotification('To release the object press X')
 	--		local boneIndex = GetPedBoneIndex(player, 28422)
 			AttachEntityToEntity(CargarObjeto, PlayerPedId(), GetPedBoneIndex(PlayerPedId(), 18905), 0.15, 0.0, 0.23, -50.0, -50.0, 0.0, true, true, false, true, 1, true)
 			TaskPlayAnim(PlayerPedId(), 'anim@heists@box_carry@', "walk", 8.0, -8, -1, 49, 0, 0, 0, 0)
@@ -469,7 +469,7 @@ end
 end)
 
 
-OpenGarajeMenu = function(model)
+OpenGarageMenu = function(model)
     ESX.UI.Menu.CloseAll()
 
     for k,v in pairs(Config.Mecanicos) do
@@ -496,21 +496,21 @@ end
 
 
 
-AccionesMecanicos = function()
+MechanicActions = function()
 
 					local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
 
 	ESX.UI.Menu.CloseAll()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mobile_mechanic_actions', {
-		title    = "Acciones Mecanico",
+		title    = "Mechanic Actions",
         align = Config.Align,
 		elements = {
-			{label = "Facturas",       value = 'billing'},
-			{label = "Abrir Cerradura",        value = 'hijack_vehicle'},
-			{label = "Reparar",        value = 'fix_vehicle'},
-			{label = "Limpiar",         value = 'clean_vehicle'},
-			{label = "Confiscar",       value = 'del_vehicle'},
+			{label = "Billings",       value = 'billing'},
+			{label = "Unlock",        value = 'hijack_vehicle'},
+			{label = "Repair",        value = 'fix_vehicle'},
+			{label = "Clean",         value = 'clean_vehicle'},
+			{label = "Confiscate",       value = 'del_vehicle'},
 			
 	}}, function(data, menu)
 		if isBusy then return end
@@ -521,20 +521,20 @@ AccionesMecanicos = function()
 			ESX.UI.Menu.Open(
 							'dialog', GetCurrentResourceName(), 'billing',
 							{
-								title = "Monto"
+								title = "Amount"
 							},
 								function(data, menu)
 									local amount = tonumber(data.value)
 										if amount == nil then
-											ESX.ShowNotification("Monto invalido")
+											ESX.ShowNotification("Invalid amount")
 										else
 											menu.close()
 											local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
 												if closestPlayer == -1 or closestDistance > 3.0 then
-													ESX.ShowNotification("No hay jugadores cerca")
+													ESX.ShowNotification("There are no players nearby")
 												else
 													TriggerServerEvent('esx_billing:sendBill', GetPlayerServerId(closestPlayer), 'society_mechanic', 'Factura de Mecanico', amount)
-													ESX.ShowNotification("Has enviado una factura")
+													ESX.ShowNotification("You have sent an invoice")
 												end
 										end
 								end,
@@ -548,7 +548,7 @@ AccionesMecanicos = function()
 			local coords = GetEntityCoords(playerPed)
 
 			if IsPedSittingInAnyVehicle(playerPed) then
-				ESX.ShowNotification("No puedes hacer esto desde el interior del vehículo")
+				ESX.ShowNotification("You cannot do this from inside the vehicle")
 				return
 			end
 
@@ -562,7 +562,7 @@ AccionesMecanicos = function()
 					SetVehicleDoorsLockedForAllPlayers(vehicle, false)
 					ClearPedTasksImmediately(playerPed)
 
-					ESX.ShowNotification("Vehiculo desbloqueado con exito")
+					ESX.ShowNotification("Vehicle unlocked successfully")
 					isBusy = false
 				end)
 			else
@@ -574,7 +574,7 @@ AccionesMecanicos = function()
 			local coords    = GetEntityCoords(playerPed)
 
 			if IsPedSittingInAnyVehicle(playerPed) then
-				ESX.ShowNotification("No puedes hacer esto desde el interior del vehículo")
+				ESX.ShowNotification("You cannot do this from inside the vehicle")
 				return
 			end
 
@@ -590,11 +590,11 @@ AccionesMecanicos = function()
 					SetVehicleEngineOn(vehicle, true, true)
 					ClearPedTasksImmediately(playerPed)
 
-					ESX.ShowNotification("Vehiculo reparado con exito")
+					ESX.ShowNotification("Successfully repaired vehicle")
 					isBusy = false
 				end)
 			else
-				ESX.ShowNotification("No hay ningun vehiculo cerca")
+				ESX.ShowNotification("There is no vehicle nearby")
 			end
 		elseif data.current.value == 'clean_vehicle' then
 			local playerPed = PlayerPedId()
@@ -602,7 +602,7 @@ AccionesMecanicos = function()
 			local coords    = GetEntityCoords(playerPed)
 
 			if IsPedSittingInAnyVehicle(playerPed) then
-				ESX.ShowNotification("No puedes hacer esto desde el interior del vehículo")
+				ESX.ShowNotification("You cannot do this from inside the vehicle")
 				return
 			end
 
@@ -615,11 +615,11 @@ AccionesMecanicos = function()
 					SetVehicleDirtLevel(vehicle, 0)
 					ClearPedTasksImmediately(playerPed)
 
-					ESX.ShowNotification("El vehículo ha sido ~g~limpiado")
+					ESX.ShowNotification("The vehicle has been ~g~cleaned")
 					isBusy = false
 				end)
 			else
-				ESX.ShowNotification("No hay ningún vehículo cercano")
+				ESX.ShowNotification("There is no vehicle nearby")
 			end
 		elseif data.current.value == 'del_vehicle' then
 			local playerPed = PlayerPedId()
@@ -628,19 +628,19 @@ AccionesMecanicos = function()
 				local vehicle = GetVehiclePedIsIn(playerPed, false)
 
 				if GetPedInVehicleSeat(vehicle, -1) == playerPed then
-					ESX.ShowNotification("El vehículo ha sido ~r~incautado")
+					ESX.ShowNotification("The vehicle has been ~r~seized")
 					ESX.Game.DeleteVehicle(vehicle)
 				else
-					ESX.ShowNotification("Debes estar en el asiento del conductor")
+					ESX.ShowNotification("You must be in the driver's seat")
 				end
 			else
 				local vehicle = ESX.Game.GetVehicleInDirection()
 
 				if DoesEntityExist(vehicle) then
-					ESX.ShowNotification("El vehículo ha sido ~r~incautado")
+					ESX.ShowNotification("The vehicle has been ~r~seized")
 					ESX.Game.DeleteVehicle(vehicle)
 				else
-					ESX.ShowNotification(_U('must_near'))
+					ESX.ShowNotification("There is no vehicle nearby")
 				end
 			end
         end
@@ -650,12 +650,12 @@ AccionesMecanicos = function()
 	end)
 end
 
-IndocumentarioMenu = function()
+ClothesMenu = function()
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'indocumentaria', {
-		title    = 'Vestimentas',
+		title    = 'Clothes',
 		align    = 'bottom-right',
 		elements = {
-			{label = 'Ropa civil', value = 'citizen_wear'},
+			{label = 'Civilian Wear', value = 'citizen_wear'},
 			{label = 'EUP', value = 'ambulance_wear'},
 	}}, function(data, menu)
 		if data.current.value == 'citizen_wear' then
@@ -686,7 +686,7 @@ ArmarioMenu = function()
 	ESX.UI.Menu.CloseAll()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'arnario', {
-		title    = 'Armario',
+		title    = 'Wardrobe',
 		align    = 'bottom-right',
 		elements = elements
 	}, function(data, menu)

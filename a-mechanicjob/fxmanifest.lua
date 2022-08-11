@@ -2,9 +2,8 @@ fx_version "cerulean"
 game "gta5"
 
 name "mechanicjob"
-description "Trabajo de Mecanico"
+description "Mechanic Job"
 author "ARtuRO"
-version "1"
 
 client_scripts {
 	'@es_extended/locale.lua',

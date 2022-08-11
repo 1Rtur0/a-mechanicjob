@@ -728,16 +728,16 @@ PonerObjeto = function()
 			local itemName = data.current.value
 
 			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'meter_items', {
-				title = "Cantidad"
+				title = "Quantity"
 			}, function(data2, menu2)
 				local count = tonumber(data2.value)
 
 				if not count then
-					ESX.ShowNotification("Cantidad invalida")
+					ESX.ShowNotification("Invalid Quantity")
 				else
 					menu2.close()
 					menu.close()
-					TriggerServerEvent('letag-mechanicjob:putStockItems', itemName, count)
+					TriggerServerEvent('a-mechanicjob:putStockItems', itemName, count)
 
 					Citizen.Wait(300)
 					OpenPutArmarioMenu()

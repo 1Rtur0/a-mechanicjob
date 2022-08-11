@@ -3,20 +3,20 @@ OpenProps = function()
 		title = "Props",
 		align = Config.Align,
 		elements = {
-			{label ="Llanta", value = "llanta"},
-			{label ="Puerta", value = "puerta"},
-			{label ="Asiento", value = "seat"}, 
-			{label ="Capot", value = "capot"},
-			{label ="Paragolpe", value = "paragolpe"}, 
-			{label ="Caño de escape", value = "escape"}, 
-			{label ="Motor chico", value = "motorc"}, 
-			{label ="Motor grande", value = "motorg"}, 
+			{label ="Wheel", value = "llanta"},
+			{label ="Door", value = "puerta"},
+			{label ="Seat", value = "seat"}, 
+			{label ="Hood", value = "capot"},
+			{label ="Bumper", value = "paragolpe"}, 
+			{label ="Tailpipe", value = "escape"}, 
+			{label ="Small Engine", value = "motorc"}, 
+			{label ="Big Engine", value = "motorg"}, 
 			{label ="Caliper", value = "caliper"},
-			{label ="Transmisión", value = "transmision"},  
-			{label ="Carburador", value = "carburador"},  
-			{label ="Cubrerueda", value = "cubrerueda"}, 
-			{label ="Batería", value = "bateria"}, 
-			{label ="Cubierta", value = "Cubierta"}, 
+			{label ="Transmission", value = "transmision"},  
+			{label ="Carburetor", value = "carburador"},  
+			{label ="Wheel Cover", value = "cubrerueda"}, 
+			{label ="Battery", value = "bateria"}, 
+			{label ="Deck", value = "Cubierta"}, 
 		}
 	}, function(data,menu)
 		local c = data.current
@@ -679,8 +679,8 @@ end
 
 ArmarioMenu = function()
 	local elements = {
-		{label = "Depositar objeto", value = 'put_armario'},		
-		{label = "Remover objeto",  value = 'get_armario'}	
+		{label = "Deposit object", value = 'put_armario'},		
+		{label = "Remove object",  value = 'get_armario'}	
 	}
 
 	ESX.UI.Menu.CloseAll()
@@ -703,7 +703,7 @@ ArmarioMenu = function()
 end
 
 PonerObjeto = function()
-	ESX.TriggerServerCallback('letag-mechanicjob:getPlayerInventory', function(inventory)
+	ESX.TriggerServerCallback('a-mechanicjob:getPlayerInventory', function(inventory)
 		local elements = {}
 
 		for i=1, #inventory.items, 1 do
@@ -720,7 +720,7 @@ PonerObjeto = function()
 		end
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'armario_menu', {
-			title    = "Inventario",
+			title    = "Inventory",
 			align    = 'bottom-right',
 			elements = elements,
 			enableImages = true
@@ -752,7 +752,7 @@ PonerObjeto = function()
 end
 
 SacarObjeto = function()
-	ESX.TriggerServerCallback('letag-mechanicjob:getStockItems', function(items)
+	ESX.TriggerServerCallback('a-mechanicjob:getStockItems', function(items)
 		local elements = {}
 
 		for i=1, #items, 1 do
@@ -765,7 +765,7 @@ SacarObjeto = function()
 		end
 
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'armario2_menu', {
-			title    = "Inventario",
+			title    = "Inventory",
 			align    = 'bottom-right',
 			elements = elements,
 			enableImages = true
@@ -773,16 +773,16 @@ SacarObjeto = function()
 			local itemName = data.current.value
 
 			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'sacar_items', {
-				title = "Cantidad"
+				title = "Quantity"
 			}, function(data2, menu2)
 				local count = tonumber(data2.value)
 
 				if not count then
-					ESX.ShowNotification("Cantidad invalida")
+					ESX.ShowNotification("Invalid Quantity")
 				else
 					menu2.close()
 					menu.close()
-					TriggerServerEvent('letag-mechanicjob:getStockItem', itemName, count)
+					TriggerServerEvent('a-mechanicjob:getStockItem', itemName, count)
 
 					Citizen.Wait(300)
 					OpenGetArmarioMenu()
